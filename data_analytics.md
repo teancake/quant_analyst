@@ -17,12 +17,14 @@
 #### Reference 
 SR1： https://zhuanlan.zhihu.com/p/347709270
 #### 内容
-操作的时候可以在 https://www.mycompiler.io/ 上做，我需要提前做两张表，由指数表和股票行情表计算每支股票的beta值。 https://www.mycompiler.io/view/ES0BIYAhpoT
+操作的时候可以在 https://www.mycompiler.io/ 上做，由指数表和股票行情表计算每支股票的beta值。已经建好了，位于 https://www.mycompiler.io/view/ES0BIYAhpoT
+
 数据分析常用的命令
 * SELECT, DISTINCT, WHERE, IN, LIKE, ORDER BY
 * JOIN
 * 聚合函数,COUNT、MAX、MIN、SUM、AVG,  GROUP BY, HAVING
 * 嵌套子查询
+
 数据操作命令
 可以忽略： 建库、建表、添加、删除、更新记录
 
