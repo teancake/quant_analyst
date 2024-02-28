@@ -17,4 +17,6 @@ jupyter-lab
 
 * 几个notebook文件均修改过，只保留了能运行的部分。
 * 有一少部分数据需要从Nasdaq Data Link https://data.nasdaq.com 下载，可以先注册个账号，之后拿到API key即可。
+* CH09最后一部分使用python来调用R，在WINDOWS系统下安装pyr2包可能比较麻烦，删去不用。
+* QuantLib提供了很多金融产品的定价和分析工具，很赞。
 

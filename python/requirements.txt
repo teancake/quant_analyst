@@ -14,3 +14,6 @@ TA-Lib
 ta
 pandas-datareader
 linearmodels
+arch
+QuantLib
+quantstats
