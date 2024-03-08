@@ -25,7 +25,7 @@
   * modelling volatility; PR2-Ch09， 见python文件夹 
   * Monte Carlo simulation; PR2-Ch10， 见python文件夹  
 * Session 3, 03-17 09:00AM
-  * python工程架构,一共两个工程，一个正经的，一个很随意的。见python文件夹 ![python工程模板](python/python_project.md) 。  
+  * python工程架构,一共两个工程，一个正经的，一个很随意的。见python文件夹 [python工程模板](python/python_project.md) 。  
   * 特征向量、PCA具体应用。
   * asset allocation; PR2-Ch11 
   * backtesting; PR2-Ch12
