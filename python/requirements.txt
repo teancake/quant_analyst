@@ -17,3 +17,6 @@ linearmodels
 arch
 QuantLib
 quantstats
+cvxpy
+PyPortfolioOpt
+backtrader

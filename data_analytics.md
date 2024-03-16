@@ -27,8 +27,12 @@
 * Session 3, 03-17 09:00AM
   * python工程架构,一共两个工程，一个正经的，一个很随意的。见python文件夹 [python工程模板](python/python_project.md) 。  
   * 特征向量、PCA具体应用。
-  * asset allocation; PR2-Ch11 
-  * backtesting; PR2-Ch12
+    * 特征值和特征向量：https://vincere.fun/posts/fc532062/# 推导第一个主成分的方向，对于相关矩阵来说的话，特征向量的方向是最大化方差的方向。我们想找一个能够解释相关性的办法。
+    * PCA： 构建因子，做因子投资。经典模型需要明确指定因子结构，PCA方法认为人们并不知道真实的定价因子是什么，将真实的因子视为隐性因子latent factors, 通过提取资产收益协方差矩阵的主成份来估计因子暴露和因子的风险溢价，之后可以做资产配置，详见 [主成分分析和因子选择](pca_factor.pdf) 以及  https://finance.sina.cn/2020-07-23/detail-iivhvpwx7107494.d.html。
+  * 我想问一下GARCH模型的原理是什么，解决什么问题。Barra 模型怎么用？ 收益模型和风险模型怎么能同时用于资产分配上？比如最小方差、最大多样化、风险平价、等权重分别是什么意思？
+  * asset allocation; PR2-Ch11，代码见python文件夹，需要先更新requirements.txt里的依赖 
+  * backtesting; PR2-Ch12, quantstats的比较那里有点问题，先注释掉了。 代码见python文件夹，需要先更新requirements.txt里的依赖 
+
 
 ### SQL
 #### Reference 
