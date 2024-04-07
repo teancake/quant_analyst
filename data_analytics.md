@@ -35,10 +35,15 @@
     * 可以构建eigen-portfolio，均值方差优化之外的一个构建组合的方法，实际中有没有用不清楚。[Case study 1: eigen portfolio](pca_eigenportfolio.pdf)
     * 可以对特征做降维，防止特征过拟合，提升训练速度。 [Case study 3 特征变换](pca_eigenportfolio.pdf)
     * 构建因子，做因子投资。经典模型需要明确指定因子结构，PCA方法认为人们并不知道真实的定价因子是什么，将真实的因子视为隐性因子latent factors, 通过提取资产收益协方差矩阵的主成份来估计因子暴露和因子的风险溢价，之后可以做资产配置，详见 [主成分分析和因子选择](pca_factor.pdf), [Alpha系列——因子模型](https://bigquant.com/experimentshare/d10e7682969747bbb8c297180a844c7b)，这个一直没看懂。
-* Session 4, 03-24 09:00AM
+* Session 4, 04-07 09:00AM
   * asset allocation; PR2-Ch11，代码见python文件夹，需要先更新requirements.txt里的依赖 
   * backtesting; PR2-Ch12, quantstats的比较那里有点问题，先注释掉了。 代码见python文件夹，需要先更新requirements.txt里的依赖 
+    * backtrader代码阅读: [实体图](backtrader.jpg), Cerebro类是串起所有其它实体的核心。Analyzer, Indicator, Observer, Strategy是顶层最重要的4个类。 MetaBase和MetaParams是创建其它类的核心，很多成员和方法都是由他俩注入的。
 
+* Session 5, 04-14 09:00AM
+  * CAMP模型是怎么用的，beta的例子
+  * 回测的例子，均值策略管用吗？
+  * FF3模型怎么用，多因子模型怎么用
 
 ### SQL
 #### Reference 
