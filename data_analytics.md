@@ -44,6 +44,12 @@
   * CAMP模型是怎么用的，beta的例子
   * 回测的例子，均值策略管用吗？
   * FF3模型怎么用，多因子模型怎么用
+* Session 6, 04-21 09:00AM
+* Session 7, 04-27 20:00PM
+  * 文档，包括多因子模型、时序模型、以及ML模型。
+* Session 8, 04-30 20:00AM
+* Session 9, 05-02 20:00AM
+* Session 10, 05-04 20:00AM
 
 ### SQL
 #### Reference 
