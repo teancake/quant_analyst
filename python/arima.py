@@ -27,11 +27,15 @@ class BaseModel(ABC):
 
 
 class ArimaModel(BaseModel):
+    # arima模型可以参考Python for Finance Cookbook的Chapter 6 
 
     def feature_engineering(self) -> (pd.DataFrame, pd.DataFrame):
         pass
 
-    def fit(self) -> pd.DataFrame:
+    def fit(self) -> (object, pd.DataFrame):
+        pass
+
+    def predict(self, x: pd.DataFrame) -> pd.DataFrame:
         pass
 
 
