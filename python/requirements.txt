@@ -20,3 +20,5 @@ quantstats
 cvxpy
 PyPortfolioOpt
 backtrader
+loguru
+lightgbm
