@@ -1,8 +1,6 @@
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
-import plotly.graph_objects as go
-import plotly
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
@@ -21,6 +19,7 @@ def get_data():
     df = df.dropna()
     df = df.astype(float)
     df = df[(df.index >= pd.to_datetime("2001-10-01")) & (df.index <= pd.to_datetime("2008-10-02"))]
+    df.columns.name = "TERM"
     print(df)
     return df
 
@@ -105,11 +104,36 @@ def pca(df):
     pc_factor = df @ pc_main
     pc_factor.plot(title="eigenfactor values")
     plt.show()
-    return pc_main, eigen_main, stat_df
+    return pc_main, eigen_main, stat_df, pc_factor
 
+
+def fama_macbeth(df, pc_factor):
+    # 时序回归
+    import statsmodels.api as sm
+    x = sm.add_constant(pc_factor)
+    results = sm.OLS(df["DSWP1"], x).fit()
+    print(results.summary())
+    beta, _, _, _ = np.linalg.lstsq(x, df)
+    beta = pd.DataFrame(beta, columns=df.columns, index=x.columns)
+    print(beta)
+
+    # 第二阶段回归
+    fm_df = pd.merge(df.unstack().to_frame(name="rate"), beta.T, left_index=True, right_index=True)
+    from linearmodels.panel.model import FamaMacBeth
+    model = FamaMacBeth(fm_df["rate"], fm_df[["PC1", "PC2", "PC3"]])
+    res = model.fit()
+    print(res)
+    print(res.all_params)
+    pd.merge(res.all_params, pc_factor, left_index=True, right_index=True).plot()
+    plt.show()
 
 if __name__ == '__main__':
     df = get_data()
-    pc_main, eigen_main, stat_df = pca(df)
+    print(df.columns)
+
+    pc_main, eigen_main, stat_df, pc_factor = pca(df)
     print(stat_df)
+
+    fama_macbeth(df, pc_factor)
+
     
