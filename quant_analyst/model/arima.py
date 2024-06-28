@@ -1,29 +1,12 @@
 import pandas as pd
-from abc import ABC, abstractmethod
-from loguru import logger
 import lightgbm as lgb
 
+from base_model import BaseModel
+from ..data.stock_data import StockData
 
-class BaseModel(ABC):
-    def __init__(self):
-        self.model = None
-        pass
+from ..utils.log_util import get_logger
 
-    def load_data(self):
-        df = pd.read_csv("stock_data.csv", index_col=['date', 'ticker'])
-        return df
-
-    @abstractmethod
-    def feature_engineering(self) -> pd.DataFrame:
-        pass
-
-    @abstractmethod
-    def fit(self) -> (object, pd.DataFrame):
-        pass
-
-    @abstractmethod
-    def predict(self, x: pd.DataFrame) -> pd.DataFrame:
-        pass
+logger = get_logger()
 
 
 class ArimaModel(BaseModel):
@@ -42,11 +25,10 @@ class ArimaModel(BaseModel):
 class LgbmModel(BaseModel):
     def __init__(self):
         super().__init__()
-        pass
 
     def feature_engineering(self):
         logger.info("feature engineering")
-        df = self.load_data()
+        df = StockData().load_data()
         logger.info(f"df sample {df}")
         df["pct_chg"] = df.sort_index(level="date", ascending=True).groupby("ticker")["close"].pct_change().values
         df["ma5"] = df.groupby("ticker")["pct_chg"].rolling(window=5).mean().values
