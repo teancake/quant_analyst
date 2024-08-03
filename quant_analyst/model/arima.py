@@ -1,10 +1,8 @@
 import pandas as pd
 import lightgbm as lgb
 
-from base_model import BaseModel
-from ..data.stock_data import StockData
-
-from ..utils.log_util import get_logger
+from .base_model import BaseModel
+from utils.log_util import get_logger
 
 logger = get_logger()
 
